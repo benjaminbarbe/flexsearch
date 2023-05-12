@@ -340,7 +340,7 @@ function M(a, b, c, d, e) {
 L.prototype.push_index = function(a, b, c, d, e, f) {
   let g = f ? this.ctx : this.map;
   if (!a[b] || f && !a[b][f]) {
-    this.optimize && (g = g[c]), f ? (a = a[b] || (a[b] = w()), a[f] = 1, g = g[f] || (g[f] = w())) : a[b] = 1, g = g[b] || (g[b] = []), this.optimize || (g = g[c] || (g[c] = [])), e && g.includes(d) || (g[g.length] = d, this.fastupdate && (a = this.register[d] || (this.register[d] = []), a[a.length] = g));
+    this.optimize && (g = g[c]), f ? (a = a[b] || (a[b] = w()), a[f] = 1, g = g[f] || (g[f] = w())) : a[b] = 1, g = g[b] || (g[b] = []), this.optimize || (g = g[c] || (g[c] = [])), e && g.includes(d) || (g[g.length] = {id:d, score:c}, this.fastupdate && (a = this.register[d] || (this.register[d] = []), a[a.length] = g));
   }
 };
 L.prototype.search = function(a, b, c) {

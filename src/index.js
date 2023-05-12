@@ -359,7 +359,7 @@ Index.prototype.push_index = function(dupes, value, score, id, append, keyword){
 
         if(!append || !arr.includes(id)){
 
-            arr[arr.length] = id;
+            arr[arr.length] = {id, 'score': score};
 
             // add a reference to the register for fast updates
 
